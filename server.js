@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const PORT = 8000
 
 const rappers = {
@@ -19,6 +20,8 @@ const rappers = {
         'birthLocation': 'unknown'
     }
 }
+
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
